@@ -799,6 +799,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
         }
 
         // Syntax check
+        $pValue = mb_strlen($pValue) > 31 ? mb_substr($pValue, 0, 28).'...' : $pValue;
         self::_checkSheetTitle($pValue);
 
         // Old title
